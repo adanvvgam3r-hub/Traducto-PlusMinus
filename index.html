@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLUSMINUS ULTRA - Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- MENU INICIAL -->
+    <div id="menu-principal" class="container">
+        <h1>PLUSMINUS ULTRA</h1>
+        <div class="menu-buttons">
+            <button class="btn-process" onclick="abrirTradutor('C')">CODIFICAR</button>
+            <button class="btn-clear" onclick="abrirTradutor('DC')">DECODIFICAR</button>
+            <button class="btn-dic" onclick="abrirDicionario()">VER DICIONÁRIO</button>
+        </div>
+    </div>
+
+    <!-- TELA TRADUTOR -->
+    <div id="tela-tradutor" class="container" style="display: none;">
+        <h1 id="titulo-modo">MODO: CODIFICAR</h1>
+        <div class="conteudo">
+            <div class="campos">
+                <div class="input-group">
+                    <label>TEXTO / CÓDIGO:</label>
+                    <textarea id="entrada" placeholder="Digite aqui..."></textarea>
+                </div>
+                <div class="input-group">
+                    <label>RESULTADO:</label>
+                    <textarea id="saida" readonly placeholder="O resultado aparecerá aqui..."></textarea>
+                </div>
+            </div>
+            <div class="botoes-laterais">
+                <button class="btn-process" onclick="processar()">PROCESSAR</button>
+                <button class="btn-clear" onclick="limpar()">LIMPAR</button>
+                <button class="btn-voltar" onclick="voltarMenu()">VOLTAR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DO DICIONÁRIO -->
+    <div id="modal-dic" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharDicionario()">&times;</span>
+            <h2>Dicionário Completo</h2>
+            <div id="lista-dic" class="dic-grid"></div>
+        </div>
+    </div>
+
+    <script src="dicio.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
